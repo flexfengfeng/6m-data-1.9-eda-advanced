@@ -1,34 +1,45 @@
-# **1.9 EDA Advanced: Data Wrangling & Analysis**
+# 📚 Lesson 1.9: EDA Advanced — Data Wrangling & Analysis
 
-## **Course Overview**
+**Theme:** From Messy to Meaningful — reshaping, merging, and analysing complex datasets
 
-This module transforms basic Python knowledge into professional data manipulation skills using a **Flipped Classroom** approach. Learners will move from theoretical understanding to hands-on application of complex data wrangling tasks.
+---
 
-## **Learning Objectives**
+## 📅 Lesson Overview
 
-By the end of this module, learners will be able to:
+| Section | Duration | Topic / Activity |
+|---------|----------|-----------------|
+| **Part 1: Time Series** | 55 min | Datetime objects; frequency resampling; rolling averages |
+| **Part 2: Data Integration** | 55 min | SQL-style merges/joins; melt & pivot (wide ↔ long format) |
+| **Part 3: Aggregation & Reporting** | 55 min | GroupBy; pivot tables; cross-tabulations |
 
-1. **Master Time Series:** Handle datetime objects, resample frequencies, and calculate rolling statistics (moving averages) on financial data.  
-2. **Wrangle & Merge:** Combine multiple data sources using SQL-style joins and reshape data layouts (Wide vs. Long) for analysis.  
-3. **Aggregate & Report:** Create executive-level summaries using GroupBy, Pivot Tables, and Cross-Tabulations.
+---
 
-## **Course Structure & Materials**
+## 🎯 Learning Outcomes
 
-| Part | Activity | Description | Materials |
-| :---- | :---- | :---- | :---- |
-| **Part 1** | **Pre-Class Preparation** | Self-study to master the concepts before coding. **Key Concepts:** \- Covariance vs. Correlation \- Tidy Data (Wide vs. Long) \- Split-Apply-Combine logic | \- **Study Guide:** [Pre-Class Study Guide](./pre-class.md) \- **References:** [Cheatsheets & Links](https://www.google.com/search?q=./reference.md) |
-| **Part 2** | **In-Class Workshop** | Interactive coding session focusing on solving real-world data problems. **Sections:** 1\. Financial Time Series & Window Functions 2\. Data Wrangling (Merges & Reshaping) 3\. Aggregation & Reporting (Pivot Tables) 4\. Advanced Toolkit (Optional/Deep Dive) | \- **Main Notebook:** [EDA_Advanced](./notebooks/eda_advanced.ipynb) |
-| **Part 3** | **Post-Class Assessment** | Consolidation of skills through testing and a mini-project. **Tasks:** \- 5-Question Conceptual Quiz \- Mini-Project: Analyze sales performance using Resampling, Pivoting, and Aggregation | \- **Assessment:** [Post-Class Assessment](./post-class.md) |
+By the end of this lesson, you will be able to:
 
-## **Technical Requirements**
+1. **Parse** and manipulate datetime data to perform time-based resampling and rolling window calculations.
+2. **Merge** multiple DataFrames using SQL-style joins and convert between wide and long data formats.
+3. **Aggregate** data using `groupby`, pivot tables, and cross-tabulations to generate summary reports.
+4. **Apply** the split-apply-combine pattern to answer complex analytical questions on real datasets.
 
-* **Environment:** pds conda environment.  
-* **Tools:** VS Code or Jupyter Notebook.  
-* **Data:**  
-  * ../data/yahoo\_price.pkl  
-  * ../data/yahoo\_volume.pkl  
-  * ../data/tips.csv
+---
 
-## **Other Reference**
+## 📂 Course Materials
 
-- [Reference](./reference.md)
+| Material | Description | Est. Time |
+|----------|-------------|-----------|
+| [Pre-Class](./pre-class.md) | Correlation vs. covariance; datetime; wide vs. long format | 30–45 min |
+| [Lesson Plan](./lesson.md) | Instructor guide for the 3-hour coding session | 3 hours |
+| [Post-Class](./post-class.md) | Conceptual quiz + mini-project (time series & pivot tables) | 45–60 min |
+| [Reference](./reference.md) | Pandas wrangling cheat sheet; datetime reference | As needed |
+
+---
+
+## 🛠️ Tools & Setup
+
+- **[VS Code](https://code.visualstudio.com)** + Python + Jupyter extensions *(recommended)*.
+- **[Google Colab](https://colab.research.google.com)** *(alternative)*.
+- **Notebook:** `notebooks/eda_advanced.ipynb` — select the `pds` kernel in VS Code.
+- **Environment:** `conda env create -f environment.yml` then `conda activate pds`.
+- **Dataset:** Located in `data/` folder (financial price/volume data + tips dataset).
