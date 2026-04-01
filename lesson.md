@@ -177,5 +177,5 @@ ct = pd.crosstab(tips['smoker'], tips['time'], margins=True)
 3. **GroupBy is your reporting engine:** combine with `agg()`, `pivot_table()`, and `crosstab()` to generate executive-ready summaries in seconds.
 
 ### Next Steps
-- **Post-Class:** Complete the [post-class.md](./post-class.md) — conceptual quiz + mini-project (time series resampling + pivot tables).
+- **Post-Class:** Complete the [assignment.md](./assignment.md) — conceptual quiz + mini-project (time series resampling + pivot tables).
 - **Next Lesson:** Lesson 1.10 covers Data Visualisation — turning these aggregated insights into compelling charts and stories.
