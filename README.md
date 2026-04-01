@@ -31,7 +31,7 @@ By the end of this lesson, you will be able to:
 |----------|-------------|-----------|
 | [Pre-Class](./pre-class.md) | Correlation vs. covariance; datetime; wide vs. long format | 30–45 min |
 | [Lesson Plan](./lesson.md) | Instructor guide for the 3-hour coding session | 3 hours |
-| [Post-Class](./assignment.md) | Conceptual quiz + mini-project (time series & pivot tables) | 45–60 min |
+| [Assignment](./assignment.md) | Conceptual quiz + mini-project (time series & pivot tables) | 45–60 min |
 | [Reference](./reference.md) | Pandas wrangling cheat sheet; datetime reference | As needed |
 
 ---
