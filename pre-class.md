@@ -1,8 +1,11 @@
 # **Pre-Class Study Guide: Advanced EDA**
 
-**Estimated Duration:** 30 Minutes
+⏱️ **Estimated Duration:** 30 Minutes
+**Prerequisites:** Lesson 1.8 — EDA Basic
 
-**Goal:** Prepare your "mental model" for the upcoming workshop. We will be writing a lot of code in class, so understanding *why* we do these operations beforehand is crucial.
+> In Lesson 1.8 you cleaned messy datasets using descriptive statistics, handled missing values, and transformed string data. This lesson goes further: you'll learn to analyse relationships between columns (correlation), reshape data between wide and long formats, work with time-series dates, and summarise groups using Split-Apply-Combine logic.
+
+**Goal:** Build your mental model for these operations *before* working through the code. Understanding the *why* makes the syntax much easier to absorb.
 
 **Video Intro:** [Advanced EDA](https://youtu.be/IzujGGRYjkQ)
 
@@ -45,9 +48,7 @@ This is the logic behind the famous groupby operation.
 
 ## **2\. AI Companion Exercise (Highly Recommended)**
 
-We encourage you to use an AI tool (ChatGPT, Claude, or NotebookLM) to solidify these concepts.
-
-Instructions:
+Use an AI assistant (ChatGPT or Claude) to solidify these concepts by working through the prompts below. This is a great substitute for a study group if you're learning solo.
 
 Copy and paste the prompts below into your AI assistant.
 
@@ -72,13 +73,26 @@ Keep these open during the class. They are excellent for looking up syntax quick
 
 ## **4\. Check for Understanding**
 
-Before attending class, can you answer "Yes" to the following?
+Before moving on, can you answer "Yes" to the following?
 
-* \[ \] I understand that NaN stands for "Not a Number" (missing data) and usually needs to be filled or dropped.  
-* \[ \] I know that if I merge two tables using an **Inner Join**, rows that don't match in both tables will be deleted.  
-* \[ \] I understand that to analyze stock trends over time, my data must be sorted chronologically by an Index.  
+* \[ \] I understand that NaN stands for "Not a Number" (missing data) and usually needs to be filled or dropped.
+* \[ \] I know that if I merge two tables using an **Inner Join**, rows that don't match in both tables will be deleted.
+* \[ \] I understand that to analyze stock trends over time, my data must be sorted chronologically by an Index.
 * \[ \] I know that pivot\_table in Python is the equivalent of Pivot Tables in Excel.
 
-**See you in class\!**
+<details>
+<summary>💡 Suggested Answers</summary>
+
+**NaN (Not a Number):** True — NaN is Pandas' placeholder for missing data. You must handle it before aggregating, plotting, or feeding data to a model, because most operations propagate or error on NaN.
+
+**Inner Join deletes non-matching rows:** True — an Inner Join only keeps rows where the key exists in *both* tables. If a customer has no orders, they disappear. Use a Left Join to keep all customers regardless.
+
+**Time-series must be sorted chronologically:** True — operations like `.resample()`, `.rolling()`, and forward-fill (`.ffill()`) assume the index goes from earliest to latest. Unsorted dates produce nonsensical results. Use `df.sort_index()` after setting a DatetimeIndex.
+
+**pivot_table ≈ Excel Pivot Tables:** True — `df.pivot_table(index=..., columns=..., values=..., aggfunc=...)` replicates the drag-and-drop logic of Excel's pivot tables. The `aggfunc` argument (e.g., `'mean'`, `'sum'`) corresponds to choosing the "Value Field Settings" in Excel.
+
+</details>
+
+If you are unsure about any of these, re-read the relevant section above or post your question in the **#questions** channel on Discord.
 
 

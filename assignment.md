@@ -135,12 +135,10 @@ Create a new Python script or Jupyter Notebook and complete the following tasks 
    * **Aggregation:** Calculate the **Average (mean)** bill size.  
    * **Margins:** Include the "All" row/column totals.
 
-Submission:
+**Submission:** Post the URL of your GitHub Repository (or a notebook screenshot) in the **#peer-reviews** Discord channel. For questions, post in **#questions**.
 
-Submit the URL of your GitHub Repository containing your Python code/Notebook.
-
-
-## Part 2 Solution
+<details>
+<summary>✅ Part 2 Solution — attempt the tasks first!</summary>
 
 ```python
 import pandas as pd
@@ -243,3 +241,5 @@ pd.options.display.float_format = '${:,.2f}'.format
 print("\nAverage Bill by Day and Time:")
 print(summary_table)
 ```
+
+</details>
