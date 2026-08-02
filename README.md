@@ -111,9 +111,13 @@ join shows you both problems at once. Which one is "right" depends on the questi
 
 | Lesson | The question it answers |
 |---|---|
-| 1.8 EDA Basic | **Can I trust this data?** — missing values, duplicates, impossible values |
+| 1.8 EDA Basic | **Can I trust this data?** — one month of the same export, raw: text money, twelve outlet spellings, sentinels, duplicates |
 | **1.9 EDA Advanced** | **What is the pattern?** — time, joins, reshaping, grouping |
 | 1.10 Visualisation | **How do I make them act?** — chart choice, design, story |
+
+`daily_sales.csv` is the cleaned version of the file Lesson 1.8 worked on, extended to 18 months.
+Learners who cleaned June in 1.8 got \$174,753; June in this file is \$175,669 — the \$916 difference
+is the eight shifts where 1.8 filled a median in place of a figure the raw export had destroyed.
 
 The summary tables you build in Part 4 are the exact tables Lesson 1.10 turns into the owner's one
 slide. Keep your notebook.

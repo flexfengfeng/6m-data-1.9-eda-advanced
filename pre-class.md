@@ -3,10 +3,14 @@
 ⏱️ **Estimated Time:** 35–40 minutes
 **Prerequisites:** Lesson 1.8 — EDA Basic
 
-> In Lesson 1.8 you cleaned a messy file: missing values, duplicates, impossible ages. You ended
-> with rows you could trust. This lesson asks the next question — **so what?** Trustworthy rows
-> still do not tell you anything until you group them, and to group them well you need four ideas:
-> time as a type, joins, shape, and split-apply-combine.
+> In Lesson 1.8 you cleaned one month of The Daily Grind's raw till export: money stored as text,
+> twelve spellings for four cafés, sentinel codes, a mis-keyed \$98,000, a duplicated batch. You ended
+> with rows you could trust. This lesson asks the next question — **so what?** Trustworthy rows still
+> do not tell you anything until you group them, and to group them well you need four ideas: time as a
+> type, joins, shape, and split-apply-combine.
+>
+> You are now working on the same export for **all 18 months**, already cleaned the way you cleaned
+> June: `data/daily_sales.csv`.
 
 🎯 **Goal:** build the mental model *before* you meet the syntax. Understanding the *why* makes the
 code almost boring, which is the aim.
