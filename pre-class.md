@@ -15,7 +15,7 @@
 🎯 **Goal:** build the mental model *before* you meet the syntax. Understanding the *why* makes the
 code almost boring, which is the aim.
 
-🎬 Watch this video: [[Advanced EDA]](https://youtu.be/IzujGGRYjkQ)
+🎬 Watch this video: [[Advanced EDA: The Analytical Autopsy]](https://youtu.be/g4SoOl3G7Hs)
 
 ---
 
