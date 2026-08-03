@@ -64,7 +64,7 @@ silently deletes $61,310 of revenue.
 | Material | Description | Est. Time |
 |----------|-------------|-----------|
 | [Pre-Class](./pre-class.md) | Datetime as a type; wide vs long; joins; split-apply-combine; correlation vs covariance | 30–40 min |
-| [Lesson Plan](./lesson.md) | Instructor guide: agenda, timings, teaching notes | 180 min |
+| [Lesson Guide](./lesson.md) | Session walkthrough: agenda, timings, what each notebook section is for | 180 min |
 | [Assignment](./assignment.md) | The Q3 review pack — build the tables that answer the owner's questions | 60–75 min |
 | [Reference](./reference.md) | Wrangling cheat sheet; offset aliases; join decision table; deep dives moved out of the notebook | As needed |
 

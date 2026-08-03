@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | **Duration** | 180 minutes (including 2 × 10-min breaks) |
-| **Format** | Flipped Classroom + Guided Coding in Jupyter |
+| **Format** | Guided coding in Jupyter, following the notebook |
 | **Tools** | VS Code + `pds` conda environment |
 | **Notebook** | `notebooks/eda_advanced.ipynb` |
 | **Dataset** | `data/daily_sales.csv` + four supporting files — one business problem, start to finish |
@@ -39,9 +39,9 @@ exactly the same amount, so they cancel in the headline. **The flat line was two
 cancelling out.** Cleaning could never have found that; only grouping does.
 
 The hook cells at the top of the notebook show the flat total, then the same total split by outlet.
-Two cells, two minutes, and the rest of the session has a reason to exist. Run them.
+Two cells, two minutes, and the rest of the session has a reason to exist. Run them first.
 
-Then ask the class to write down three things they cannot see yet — the notebook ticks them off:
+Then write down three things you cannot see yet — the notebook ticks them off as you go:
 
 1. Marina Bay's fall is a **step**, not a slope, dated to one week. *(Part 1)*
 2. There is a **fifth outlet** in the sales file that does not exist in the outlet list. *(Part 2)*
@@ -62,25 +62,25 @@ Lesson 1.8's habit was *find it → decide → apply → verify*. This lesson's 
 | Aggregation | Sum, mean or count — why that one? | Sum makes February look like a crisis; mean does not |
 | Check | Does the total tie back? | Part 2's inner join loses **$61,310** without a single warning |
 
-Say the beats out loud at each summary in Part 3. By Part 4 the class should be saying them for you.
+Say the beats at each summary in Part 3. By Part 4 you should be reaching for them without prompting.
 
-### Instructor notes
+### How to work through the notebook
 
-- **Do not skip the hook.** Flat chain total, then the per-outlet split. It costs two minutes and
-  pays for the whole session.
+- **Start with the hook.** Flat chain total, then the per-outlet split. Two minutes, and everything
+  after it has a reason to exist.
 - **Each section is spine-then-drills.** The spine works on the café data and carries the story; the
-  small hand-built tables (`drill`, `clash`, `gappy`) isolate one mechanic. If you are running late,
-  cut drills — never the spine.
+  small hand-built tables (`drill`, `clash`, `gappy`) isolate one mechanic. Short on time? Skip
+  drills — never the spine.
 - **The three payoff moments** are: the step at Marina Bay (1.4), the four-way join comparison (2.1),
   and revenue per staff hour (3.5). Everything else is scaffolding for those.
-- **The date-format cell in 1.1 is worth dwelling on.** `"03/06/2025"` parsed the wrong way round
-  raises no error and shifts your report by three months. Ask who has been bitten by this in Excel.
-- **Breaks are load-bearing.** Both break cells state where the class is and what is next.
-- **Group exercises fade:** (a) is worked or blank-filling, (b) fills blanks, (c) is from scratch, (d) is explain-only
-  with no code. Expected outputs are stated so groups self-check without waiting for you.
+- **Dwell on the date-format cell in 1.1.** `"03/06/2025"` parsed the wrong way round raises no error
+  and shifts your report by three months. It is the same bug people hit in Excel.
+- **The group exercises fade on purpose:** (a) is worked or blank-filling, (b) fills blanks, (c) is
+  from scratch, (d) is explain-only with no code. Expected outputs are stated, so you can check
+  yourself without waiting.
 - Deep dives (MultiIndex, `concat` vs `merge`, `stack`/`unstack`, time zones, business days) live in
-  `reference.md`. Point learners there; do not teach them live.
-- Part 4 writes `data/lesson19_decision.csv`. **Lesson 1.10 opens that file.** Make sure learners run it.
+  `reference.md` — read them after the session, not during.
+- Part 4 writes `data/lesson19_decision.csv`. **Lesson 1.10 opens that file** — run the cell.
 
 ---
 
@@ -155,19 +155,19 @@ Continue with **Part 2**.
 | `right` | all of the **right** | rarely; clearer as a `left` the other way round |
 | `outer` | **everything** | reconciling two lists, when mismatches *are* the finding |
 
-> **The teaching moment.** `inner` returns \$3,188,933. The raw total is \$3,250,242. It deleted the
-> pop-up kiosk's entire \$61,310 and did not say a word. Then show `indicator=True` and `validate=`
-> as the two habits that catch it.
+> **The moment to watch.** `inner` returns \$3,188,933. The raw total is \$3,250,242. It deleted the
+> pop-up kiosk's entire \$61,310 and did not say a word. `indicator=True` and `validate=` are the two
+> habits that catch it.
 
 **2.2 — merging on two keys.** The roster is one row per outlet per week, so the key is the *pair*
-`(outlet_id, week_start)`. `pd.Grouper` gets the sales to the same grain. Stress dtypes: a text
+`(outlet_id, week_start)`. `pd.Grouper` gets the sales to the same grain. Watch the dtypes: a text
 `"2024-01-01"` never matches a `Timestamp("2024-01-01")`, and pandas reports zero matches rather
 than an error.
 
 **2.3 — `melt`: wide → long.** The target sheet has one column per month, so "month" is not a column
 and cannot be a join key. `melt` folds the headers down into rows; then the merge works and a
-variance column becomes possible. Point out the kiosk's `NaN` target: honest, where `fillna(0)`
-would have printed an infinite variance.
+variance column becomes possible. Note the kiosk's `NaN` target: honest, where `fillna(0)` would
+have printed an infinite variance.
 
 **2.4 — `pivot`: long → wide.** Long format is for computers; wide format is for people. Reshape at
 the last minute, for reading. `pivot` fails on duplicate cells; `pivot_table` is the same operation
@@ -177,7 +177,7 @@ plus an aggregation, which is why duplicates are fine there.
 
 ## 🏃 Part 3: Aggregation & Reporting (45 min)
 
-Continue with **Part 3**. Every table here follows the four beats — say them out loud.
+Continue with **Part 3**. Every table here follows the four beats — run through them before each one.
 
 - **3.1 `groupby`** — split, apply, combine, on a six-row drill you can check by hand. Then two keys,
   a MultiIndex, and `.unstack()` — which *is* a pivot table.
@@ -186,7 +186,7 @@ Continue with **Part 3**. Every table here follows the four beats — say them o
 - **3.3 `pivot_table`** — index, columns, values, aggfunc, plus `margins=True` for a free check. Then
   convert rows to percentages: OUT-01 and OUT-03 make half their money before 11am; OUT-04 makes a
   third in the evening. Same chain, two different businesses.
-- **3.4 `crosstab`** — frequency, so it needs one row per event: switch to `tickets_week.csv`. Show
+- **3.4 `crosstab`** — frequency, so it needs one row per event: switch to `tickets_week.csv`. Try
   `normalize="columns"`, then `values=` + `aggfunc=`.
 - **3.5 correlation** — revenue vs staff hours, then `.corr()` across outlets. OUT-03 and OUT-04
   correlate at **-0.72** and neither causes the other; every number in the kiosk's row rests on
@@ -210,9 +210,9 @@ rent and staffing efficiency joined onto it.
 | rent as % of revenue | **28.4%** | 15.9% | 14.6% | 14.7% |
 | revenue per staff hour | **\$19.92** | \$26.36 | \$25.48 | \$26.72 |
 
-> **Make the point about what the table does not say.** It does not say "close Marina Bay". It gives
-> the owner the three numbers her decision needs, side by side. Recommending is her job; making the
-> comparison possible was yours.
+> **Notice what the table does not say.** It does not say "close Marina Bay". It gives the owner the
+> three numbers her decision needs, side by side. Recommending is her job; making the comparison
+> possible was yours.
 
 The cell saves `data/lesson19_decision.csv` and `data/lesson19_monthly_by_outlet.csv`. Lesson 1.10
 opens both — a copy already ships in `1.10/data/` so nobody is blocked, but learners who run this

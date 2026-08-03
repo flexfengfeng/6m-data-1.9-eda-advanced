@@ -26,11 +26,11 @@ code almost boring, which is the aim.
 > has to sign or walk away. She hands you 18 months of daily sales and asks: *what is going on?*
 
 Hold this question in mind as you read. Every tool below exists because a flat total is not an
-answer, and the whole lesson is one long attempt to get behind it.
+answer, and this lesson is one long attempt to get behind it.
 
-Here is the punchline, so you can watch it arrive: the chain total is flat because **one outlet is
-falling and another is rising by almost the same amount**. Nothing in Lesson 1.8 could have found
-that. It is invisible at the level of a total and obvious the moment you group by outlet.
+Keep one suspicion in your pocket: a flat total can hide two opposite movements cancelling out.
+Nothing in Lesson 1.8 could have found that — it is invisible at the level of a total, and obvious
+the moment you group by outlet.
 
 ---
 
@@ -48,7 +48,7 @@ and the UK write day first; the US writes month first. Pandas has to guess unles
 here is the cruel part: **days 1–12 parse "successfully" either way, so no error appears.** Your
 report is silently wrong by up to three months and looks perfectly healthy.
 
-Three ideas built on top of datetimes, which you will use in class:
+Three ideas built on top of datetimes, which the lesson uses throughout:
 
 | Idea | In one line | Café example |
 |---|---|---|
@@ -79,10 +79,10 @@ staffing. Those live in other files. A **join** (in pandas, `merge`) lines up tw
 | **Right** | everyone on the **RSVP list** | the mirror image of left |
 | **Outer** | **everyone** on either list | the mismatches are visible, which is sometimes the point |
 
-**Why this is not trivia.** In class you will run all four on the café data. The inner join returns a
-revenue total **$61,310 short** — a pop-up kiosk exists in the sales file but was never added to the
-outlet list, so the inner join drops it. It does not warn you. It returns a smaller number that looks
-completely reasonable.
+**Why this is not trivia.** You will run all four on the café data. One of them returns a revenue
+total that is short by tens of thousands of dollars — a pop-up kiosk exists in the sales file but was
+never added to the outlet list, so an inner join drops it. It does not warn you. It returns a smaller
+number that looks completely reasonable.
 
 **Rule of thumb:** default to `left` (keep your spine), then check for the blanks it leaves.
 
@@ -140,7 +140,8 @@ Beat 3 has teeth. February's *total* revenue drops every year — because Februa
 because business is bad. The *average trading day* barely moves. Same data, two aggregations, two
 completely different stories, and only one of them is real.
 
-Beat 4 is the one everybody skips, and it is the one that catches the $61,310.
+Beat 4 is the one everybody skips, and it is the one that catches the revenue the inner join above
+quietly deleted.
 
 ---
 
@@ -151,7 +152,7 @@ Beat 4 is the one everybody skips, and it is the one that catches the $61,310.
   unreadable. Is 111,930 a strong relationship? Unanswerable.
 * **Correlation** is covariance rescaled to sit between **−1 and 1**: `1` = move identically,
   `−1` = move exactly opposite, `0` = no linear relationship. Readable, comparable.
-* **The warning you must carry into class:** two of the cafés are correlated at **−0.72** and neither
+* **The warning to carry with you:** two of the cafés are correlated at **−0.72** and neither
   affects the other at all. One is declining, one is growing, over the same 18 months. Correlation
   cannot tell a shared timeline from a cause. Use it to *find candidates to investigate*, never as
   the finding itself.
@@ -224,7 +225,7 @@ instead, but melting is nearly always the better move: compute in long format, p
 
 **Q4:** "Flat *at what grain*?" A flat total is often two opposite movements cancelling out. Split by
 outlet, region, product or customer segment and see whether the flatness survives. In this lesson it
-does not: one café is down 28% and another is up 27%.
+does not — one café is falling sharply while another rises by almost the same amount.
 
 **Q5:** `resample` changes the grain of time — it buckets rows into days, weeks or months and
 aggregates each bucket (it is `groupby` for dates). `rolling` keeps the original rows but replaces
