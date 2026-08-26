@@ -99,7 +99,14 @@ join shows you both problems at once. Which one is "right" depends on the questi
 
 - **[VS Code](https://code.visualstudio.com)** + Python + Jupyter extensions *(recommended)*.
 - **[Google Colab](https://colab.research.google.com)** *(alternative)*.
-- **Notebook:** `notebooks/eda_advanced.ipynb` — select the `pds` kernel in VS Code.
+- **Notebooks:** the lesson is split into four self-contained parts — open them in order,
+  selecting the `pds` kernel in VS Code:
+  1. `notebooks/Part_1_time_series.ipynb`
+  2. `notebooks/Part_2_data_integration.ipynb`
+  3. `notebooks/Part_3_aggregation_reporting.ipynb`
+  4. `notebooks/Part_4_table_to_decision.ipynb`
+  
+  (The original single notebook is kept for reference at `notebooks/_original/eda_advanced.ipynb`.)
 - **Environment:** `conda env create -f environment.yml` then `conda activate pds`.
 - **Pandas version:** the notebook targets the `pds` environment (pandas 1.5) and avoids APIs
   changed in pandas 2.x, so it also runs unmodified on Google Colab.

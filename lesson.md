@@ -7,7 +7,7 @@
 | **Duration** | 180 minutes (including 2 × 10-min breaks) |
 | **Format** | Guided coding in Jupyter, following the notebook |
 | **Tools** | VS Code + `pds` conda environment |
-| **Notebook** | `notebooks/eda_advanced.ipynb` |
+| **Notebooks** | `notebooks/Part_1_time_series.ipynb` → `Part_4_table_to_decision.ipynb` (4 parts, see below) |
 | **Dataset** | `data/daily_sales.csv` + four supporting files — one business problem, start to finish |
 
 ## Agenda
@@ -104,7 +104,9 @@ By the end of this session, you will be able to:
 - ✓ You can say the three words of split-apply-combine
 - ✓ `pds` conda environment is set up
 
-Open `notebooks/eda_advanced.ipynb` in VS Code and select the `pds` kernel.
+Open `notebooks/Part_1_time_series.ipynb` in VS Code and select the `pds` kernel. Each part
+notebook ends with a pointer to the next one (`Part_2_data_integration.ipynb`,
+`Part_3_aggregation_reporting.ipynb`, `Part_4_table_to_decision.ipynb`).
 
 ---
 
